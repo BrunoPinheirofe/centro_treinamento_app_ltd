@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
     buttonLoginGoogle: {
       fontWeight: "700",
       color: "#424242",
-      fontSize: 16,
+      fontSize: 20,
     },
     googleButtonContent: {
       flexDirection: "row",
@@ -126,11 +126,11 @@ const styles = StyleSheet.create({
       alignItems: 'center',
     },
     link: {
-      marginVertical: 8,
+      marginVertical: 10,
     },
     linkText: {
       color: '#FF0000',
-      fontSize: 14,
+      fontSize: 20,
     },
     linkHighlight: {
       fontWeight: 'bold',

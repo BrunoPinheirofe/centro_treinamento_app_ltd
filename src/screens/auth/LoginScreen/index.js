@@ -4,6 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import LoginForm from "../../../forms/LoginForm"
 import styles from "./styles"
 
+
 export default function LoginScreen() {
   const [isKeybordVisible, setisKeybordVisible] = useState(false);
   const navigation = useNavigation();
@@ -53,7 +54,7 @@ export default function LoginScreen() {
             style={styles.link}
           >
             <Text style={styles.linkText}>
-              Não tem uma conta? <Text style={styles.linkHighlight}>Cadastre-se</Text>
+              Não tem uma conta? <Text style={styles.linkHighlight}>Voltar para o login</Text>
             </Text>
           </TouchableOpacity>
         </View>
