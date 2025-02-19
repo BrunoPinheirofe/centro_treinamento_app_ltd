@@ -19,11 +19,13 @@ const styles = StyleSheet.create({
         fontSize: 38,
         fontWeight: "800",
         textAlign: 'center',
+        marginTop: 50,
         marginBottom: 30,
     },
     inputContainer: {
         width: '100%',
         marginBottom: 15,
+        position: 'relative',
     },
     input: {
         backgroundColor: "#D9D9D9",

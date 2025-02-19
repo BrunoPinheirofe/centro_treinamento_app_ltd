@@ -87,6 +87,7 @@ const stylesDark = StyleSheet.create(
         inputText: {
             height: 40,
             paddingLeft: 10,
+            paddingRight: 40,
             backgroundColor: "#D9D9D9",
             borderRadius: 7,
             height: 50,
@@ -108,14 +109,17 @@ const stylesDark = StyleSheet.create(
             fontSize: 16,
         },
         password: {
-            flexDirection: "row",
-            alignItems: "center",
+            position: 'relative',
             width: "100%",
-
-            gap: 10,
         },
         passwordIput: {
             flex: 1,
+        },
+        showPasswordButton: {
+            position: 'absolute',
+            right: 10,
+            top: 15,
+            zIndex: 1,
         },
     }
 )
@@ -138,6 +142,7 @@ const stylesLight = StyleSheet.create({
       inputText: {
         height: 40,
         paddingLeft: 10,
+        paddingRight: 40,
         backgroundColor: "#fff",
         borderRadius: 7,
         borderColor: "#000",
