@@ -1,15 +1,17 @@
-import ForgotPasswordScreen from './src/screens/auth/ForgotPasswordScreen';
-import SignUpScreen from './src/screens/auth/SignUpScreen';
+import { NavigationContainer } from '@react-navigation/native';
+import AuthNavigator from './src/navigations/AuthNavigator';
+import MainNavigator from './src/navigations/MainNavigator';
+import { createStackNavigator } from '@react-navigation/stack';
 
-function App() {
+const RootStack = createStackNavigator();
+
+export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
-        <Stack.Screen name="SignUp" component={SignUpScreen} />
-        {/* ... outras rotas ... */}
-      </Stack.Navigator>
+      <RootStack.Navigator screenOptions={{ headerShown: false }}>
+        <RootStack.Screen name="Auth" component={AuthNavigator} />
+        <RootStack.Screen name="Main" component={MainNavigator} />
+      </RootStack.Navigator>
     </NavigationContainer>
   );
 } 
