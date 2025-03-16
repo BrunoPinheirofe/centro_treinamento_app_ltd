@@ -1,4 +1,3 @@
-
 import {
   FormControl,
   FormControlError,
@@ -11,19 +10,19 @@ import {
 } from "@/components/ui/form-control"
 import { Button, ButtonText } from "@/components/ui/button"
 
-import { Input, InputField } from "@/components/ui/input"
+import { Input, InputField, InputIcon, InputSlot } from "@/components/ui/input"
 import { VStack } from "@/components/ui/vstack"
-import { AlertCircleIcon } from "@/components/ui/icon"
+import { AlertCircleIcon, EyeIcon, EyeOffIcon, Icon } from "@/components/ui/icon"
 import React, { useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Heading } from '@/components/ui/heading';
 import { SafeAreaView } from "react-native-safe-area-context";
 const LoginScreen = () => {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState();
   const [password, setPassword] = useState('');
   const [isInvalid, setIsInvalid] = useState(false)
-  const [inputValue, setinputValue] = useState('')
-  
+  const [showPassword, setShowPassword] = useState(false);
+
 
 
   return <SafeAreaView>
@@ -68,11 +67,14 @@ const LoginScreen = () => {
           </FormControlLabel>
           <Input>
             <InputField
-              type="password"
+              type={showPassword ? "text" : "password"}
               placeholder="password"
-              value={inputValue}
-              onChangeText={(text) => setInputValue(text)}
+              value={password}
+              onChangeText={(text) => setPassword(text)}
             />
+            <InputSlot onPress={() => setShowPassword(!showPassword)}>
+              <InputIcon as={showPassword ? EyeOffIcon : EyeIcon} />
+            </InputSlot>
           </Input>
           <FormControlHelper>
             <FormControlHelperText>
@@ -86,7 +88,7 @@ const LoginScreen = () => {
             </FormControlErrorText>
           </FormControlError>
         </FormControl>
-        <Button className="w-fit self-end mt-4" size="sm" onPress={()=>{alert('fazer login')}}>
+        <Button className="w-fit self-end mt-4" size="sm" onPress={() => { alert('fazer login') }}>
           <ButtonText>Submit</ButtonText>
         </Button>
       </VStack>
