@@ -1,77 +1,97 @@
-import { useState } from 'react';
-import { View, Text, TouchableOpacity, Switch } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import styles from './styles';
-import  {Picker} from '@react-native-picker/picker';
 
+import {
+  FormControl,
+  FormControlError,
+  FormControlErrorText,
+  FormControlErrorIcon,
+  FormControlLabel,
+  FormControlLabelText,
+  FormControlHelper,
+  FormControlHelperText,
+} from "@/components/ui/form-control"
+import { Button, ButtonText } from "@/components/ui/button"
+
+import { Input, InputField } from "@/components/ui/input"
+import { VStack } from "@/components/ui/vstack"
+import { AlertCircleIcon } from "@/components/ui/icon"
+import React, { useState } from 'react';
+import { Card } from '@/components/ui/card';
+import { Heading } from '@/components/ui/heading';
+import { SafeAreaView } from "react-native-safe-area-context";
 const LoginScreen = () => {
-  const navigation = useNavigation();
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userType, setUserType] = useState('ALUNO');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [isInvalid, setIsInvalid] = useState(false)
+  const [inputValue, setinputValue] = useState('')
+  
 
-  const handleLogin = () => {
-    // Simulação de login
-    if(isLoggedIn) {
-      // Redireciona conforme o tipo de usuário
-      switch(userType) {
-        case 'ADMIN':
-          navigation.navigate('Main', { screen: 'AdminDashboard' });
-          break;
-        case 'TREINADOR':
-          navigation.navigate('Main', { screen: 'TrainerDashboard' });
-          break;
-        default:
-          navigation.navigate('Main', { screen: 'StudentDashboard' });
-      }
-    }
-  };
 
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Login</Text>
+  return <SafeAreaView>
+    <Card size={"lg"} variant={"filled"}>
+      <Heading size="md" className={'mb-1'}>
+        Fazer Login
+      </Heading>
 
-      <View style={styles.switchContainer}>
-        <Text style={styles.switchLabel}>Logado:</Text>
-        <Switch
-          value={isLoggedIn}
-          onValueChange={(value) => setIsLoggedIn(value)}
-          trackColor={{ false: "#767577", true: "#81b0ff" }}
-          thumbColor={isLoggedIn ? "#f5dd4b" : "#f4f3f4"}
-        />
-      </View>
-
-      <View style={styles.pickerContainer}>
-        <Picker
-          selectedValue={userType}
-          style={styles.picker}
-          onValueChange={(itemValue) => setUserType(itemValue)}
+      <VStack className="w-full max-w-[300px] rounded-md border border-background-200 p-4">
+        <FormControl
+          isInvalid={isInvalid}
+          size="md"
+          isDisabled={false}
+          isReadOnly={false}
+          isRequired={false}
         >
-          <Picker.Item label="Aluno" value="ALUNO" />
-          <Picker.Item label="Treinador" value="TREINADOR" />
-          <Picker.Item label="Administrador" value="ADMIN" />
-        </Picker>
-      </View>
+          <FormControlLabel>
+            <FormControlLabelText>Email</FormControlLabelText>
+          </FormControlLabel>
+          <Input>
+            <InputField
+              type="text"
+              placeholder="Email"
+              value={email}
+              onChangeText={(text) => setEmail(text)}
+            />
+          </Input>
+          <FormControlHelper>
+            <FormControlHelperText>
+              Email requerido
+            </FormControlHelperText>
+          </FormControlHelper>
+          <FormControlError>
+            <FormControlErrorIcon as={AlertCircleIcon} />
+            <FormControlErrorText>
+              email requerido
+            </FormControlErrorText>
+          </FormControlError>
 
-      <TouchableOpacity 
-        style={styles.loginButton} 
-        onPress={handleLogin}
-      >
-        <Text style={styles.buttonText}>
-          {isLoggedIn ? 'Entrar' : 'Simular Login'}
-        </Text>
-      </TouchableOpacity>
+          <FormControlLabel>
+            <FormControlLabelText>Senha</FormControlLabelText>
+          </FormControlLabel>
+          <Input>
+            <InputField
+              type="password"
+              placeholder="password"
+              value={inputValue}
+              onChangeText={(text) => setInputValue(text)}
+            />
+          </Input>
+          <FormControlHelper>
+            <FormControlHelperText>
+              Must be atleast 6 characters.
+            </FormControlHelperText>
+          </FormControlHelper>
+          <FormControlError>
+            <FormControlErrorIcon as={AlertCircleIcon} />
+            <FormControlErrorText>
+              Atleast 6 characters are required.
+            </FormControlErrorText>
+          </FormControlError>
+        </FormControl>
+        <Button className="w-fit self-end mt-4" size="sm" onPress={()=>{alert('fazer login')}}>
+          <ButtonText>Submit</ButtonText>
+        </Button>
+      </VStack>
 
-      <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
-        <Text style={styles.linkText}>
-          Não tem conta? <Text style={styles.linkHighlight}>Cadastre-se</Text>
-        </Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity onPress={() => navigation.navigate('ForgotPassword')}>
-        <Text style={styles.linkText}>Esqueceu a senha?</Text>
-      </TouchableOpacity>
-    </View>
-  );
+    </Card>
+  </SafeAreaView>;
 };
-
-export default LoginScreen; 
+export default LoginScreen;
