@@ -1,15 +1,6 @@
 import React, { createContext, useState, useEffect, useContext } from "react";
-
-
 export const AuthContext = createContext();
 
-export function useAuth(){
-    const context = useContext(AuthContext);
-    if (!context){
-        throw new Error("o useAuth deve ser usando dentro ");
-    }
-    return context;
-}
 
 export default function AuthProvider({children}){
     const [user, setUser] = useState(null);

@@ -1,0 +1,72 @@
+Endpoints da API Centro de Treinamento
+Vou listar todos os endpoints disponíveis na sua API e como usá-los, baseado na configuração de segurança presente no código:
+
+
+Endpoints Públicos
+Autenticação
+POST /api/auth/login - Fazer login no sistema
+POST /api/auth/register - Registrar um novo usuário
+Documentação
+GET /v3/api-docs/ - Documentação OpenAPI no formato JSON
+GET /swagger-ui.html - Interface Swagger UI
+GET /swagger-ui/ - Recursos do Swagger UI
+Endpoints para Todos os Usuários Autenticados (ALUNO, TREINADOR, ADMIN)
+Exercícios
+GET /api/exercicios/ - Listar exercícios
+Informações do Usuário
+GET /api/auth/ - Informações do usuário autenticado
+Alunos
+GET /api/alunos/ - Consultar informações de alunos
+Turmas
+GET /api/turmas/ - Consultar turmas disponíveis
+Presenças
+GET /api/presencas/ - Consultar registros de presença
+Treinos
+GET /api/treinos - Listar treinos
+Anamneses
+GET /api/anamneses/ - Consultar anamneses
+Planos
+GET /api/planos/ - Consultar planos disponíveis
+Endpoints Exclusivos para Administradores
+Administração Geral
+Todos os métodos em /api/administradores/
+Gerenciamento de Alunos
+POST, PUT, DELETE /api/alunos/
+Gerenciamento de Turmas
+POST, PUT, DELETE /api/turmas/
+Gerenciamento de Presenças
+POST, PUT, DELETE /api/presencas/
+Gerenciamento de Treinos
+POST, PUT, DELETE /api/treinos/
+Gerenciamento de Anamneses
+POST, PUT, DELETE /api/anamneses/
+Gerenciamento de Planos
+POST, PUT, DELETE /api/planos/
+Gerenciamento de Exercícios
+POST, PUT, DELETE /api/exercicios/
+Gerenciamento de Instrutores
+Todos os métodos em /api/instrutores/
+Integração com Mercado Pago
+Todos os métodos em /api/mercado-pago/
+Como Usar
+Autenticação:
+
+
+Primeiro faça login com POST /api/auth/login enviando credenciais
+O sistema retornará um token JWT
+Use este token no cabeçalho Authorization: Bearer {seu-token} para todas as requisições subsequentes
+Consulta:
+
+
+Use métodos GET com os parâmetros adequados na URL
+Exemplo: GET /api/alunos/123 para obter detalhes do aluno com ID 123
+Operações de Administrador:
+
+
+Apenas contas com perfil ADMIN podem realizar operações de criação, atualização e exclusão
+Use métodos POST para criar, PUT para atualizar e DELETE para excluir recursos
+Documentação Detalhada:
+
+
+Acesse a documentação Swagger em /swagger-ui.html para detalhes completos de cada endpoint, incluindo parâmetros necessários e esquemas de dados
+Para mais detalhes sobre os parâmetros específicos de cada endpoint, consulte a documentação Swagger da API.
