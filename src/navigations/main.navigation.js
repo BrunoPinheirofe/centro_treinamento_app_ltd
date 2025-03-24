@@ -16,7 +16,7 @@ const MainNavigation = () => {
             return <AuthNavigator />;
         }
 
-        switch (role) {
+        switch (user.role) {
             case "admin":
                 return <AdminNavigator />;
             case "aluno":

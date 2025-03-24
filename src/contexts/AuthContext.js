@@ -12,7 +12,7 @@ export default function AuthProvider({children}){
         setTimeout(() => {
             setUser({
                 nome:"Joãozinho da Silva",
-                role:"aluno",
+                role:"admin",
                 imageUrl:"https://cdn.discordapp.com/attachments/1201568893412589689/1342515633442787379/1krCU91.png?ex=67d4f15d&is=67d39fdd&hm=4a706fdfae439d5429ed7cd278e9d26aaf6b063c5577a7305bbf4826b0e2e3aa&",
                 email:"joao@example.com",
                 id:1,
