@@ -8,8 +8,8 @@ import { useAuth } from "@/src/contexts/AuthContext"
 
 const CardPerfil = ({user}) =>{
     return(
-        <Card variant='outline' className='m-3'>
-      <Avatar>
+        <Card variant='outline' className='p-4 mx-2 my-4  flex flex-row items-center space-x-4 border-[#bdbbbb]'>
+      <Avatar size="xl">
         <AvatarFallbackText>{user.nome}</AvatarFallbackText>
         <AvatarImage source={{
           uri: user.imageUrl
@@ -17,17 +17,20 @@ const CardPerfil = ({user}) =>{
       </Avatar>
       <Box>
         <Heading style={{
-          marginTop: 20
+          marginTop: 1,
+          paddingLeft: 10,
         }}>
           {user.nome}
         </Heading>
         <Text style={{
-          marginTop: 10
+          marginTop: 1,
+          paddingLeft: 10,
         }}>
           {user.email}
         </Text>
         <Text style={{
-          marginTop: 10
+          marginTop: 1,
+          paddingLeft: 10,
         }}>
           {user.matricula}
         </Text>

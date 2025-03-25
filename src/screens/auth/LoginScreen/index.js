@@ -17,12 +17,13 @@ import React, { useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Heading } from '@/components/ui/heading';
 import { SafeAreaView } from "react-native-safe-area-context";
+import { useAuth } from "@/src/contexts/AuthContext";
 const LoginScreen = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState('');
   const [isInvalid, setIsInvalid] = useState(false)
   const [showPassword, setShowPassword] = useState(false);
-
+  const { singIn } = useAuth();
 
 
   return <SafeAreaView>
@@ -88,7 +89,7 @@ const LoginScreen = () => {
             </FormControlErrorText>
           </FormControlError>
         </FormControl>
-        <Button className="w-fit self-end mt-4" size="sm" onPress={() => { alert('fazer login') }}>
+        <Button className="w-fit self-end mt-4" size="sm" onPress={() => { singIn() }}>
           <ButtonText>Submit</ButtonText>
         </Button>
       </VStack>

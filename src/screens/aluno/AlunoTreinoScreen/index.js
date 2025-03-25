@@ -1,9 +1,11 @@
 import React from 'react'; 
 import { Text } from '@/components/ui/text';
+import ExerciseScreen from '@/src/components/common/exercises/ExerciseScreen';
+
 const AlunoTreinoScreen = () => {
     return(
-
-        <Text>Tela de Treinos</Text>
+        <ExerciseScreen>
+        </ExerciseScreen>
     )
 };
 
