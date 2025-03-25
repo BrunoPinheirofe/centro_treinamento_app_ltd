@@ -3,7 +3,7 @@ import { Avatar,AvatarFallbackText,AvatarImage } from "@/components/ui/avatar"
 import { Box } from "@/components/ui/box"
 import { Text } from "@/components/ui/text"
 import { Heading } from "@/components/ui/heading"
-import { useAuth } from "@/src/contexts/AuthContext"
+import { useAuth } from "@/src/hooks/useAuth"
 
 
 const CardPerfil = ({user}) =>{

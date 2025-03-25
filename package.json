@@ -22,10 +22,6 @@
     "@gluestack-ui/modal": "^0.1.41",
     "@gluestack-ui/nativewind-utils": "^1.0.26",
     "@gluestack-ui/overlay": "^0.1.22",
-<<<<<<< HEAD
-=======
-    "@gluestack-ui/select": "^0.1.31",
->>>>>>> 956724a189b778a5ef532ea973161b37ea4e4a3b
     "@gluestack-ui/themed": "^1.1.71",
     "@gluestack-ui/toast": "^1.0.9",
     "@hookform/resolvers": "^4.1.0",
@@ -42,11 +38,8 @@
     "expo": "~52.0.32",
     "expo-calendar": "~14.0.6",
     "expo-status-bar": "~2.0.1",
-<<<<<<< HEAD
     "lucide": "^0.483.0",
     "lucide-react": "^0.482.0",
-=======
->>>>>>> 956724a189b778a5ef532ea973161b37ea4e4a3b
     "lucide-react-native": "^0.483.0",
     "nativewind": "^4.1.23",
     "react": "18.3.1",

@@ -16,14 +16,12 @@ import React, { useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Heading } from '@/components/ui/heading';
 import { SafeAreaView } from "react-native-safe-area-context";
-<<<<<<< HEAD
 import { useAuth } from "@/src/contexts/AuthContext";
-=======
 import { useAuth } from "@/src/contexts/AuthContext"
+import { useAuth } from "@/src/hooks/useAuth"
 import { View } from "react-native"
 import { Text } from 'react-native';
 
->>>>>>> 956724a189b778a5ef532ea973161b37ea4e4a3b
 const LoginScreen = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState('');
@@ -31,19 +29,11 @@ const LoginScreen = () => {
   const [showPassword, setShowPassword] = useState(false);
   const { singIn } = useAuth();
 
-<<<<<<< HEAD
 
   return <SafeAreaView>
     <Card size={"lg"} variant={"filled"}>
       <Heading size="md" className={'mb-1'}>
         Fazer Login
-=======
-  return <SafeAreaView className="flex-1 bg-[#1D1D1D] justify-center">
-    <View className=" bg-[#1D1D1D]">
-    <Card size={"lg"} variant={"filled"} className="bg-[#1D1D1D]">
-      <Heading className={'mb-5 text-center text-4xl text-white'}>
-        Bem vindo(a)!
->>>>>>> 956724a189b778a5ef532ea973161b37ea4e4a3b
       </Heading>
 
       <VStack className=" ">
@@ -89,7 +79,7 @@ const LoginScreen = () => {
             <InputField
               type={showPassword ? "text" : "password"}
               placeholder="Escreva sua senha"
-              value={password}deu certo UwU
+              value={password} deu certo UwU
               onChangeText={(text) => setPassword(text)}
               className="placeholder:text-xl"
             />
@@ -98,16 +88,16 @@ const LoginScreen = () => {
             </InputSlot>
           </Input>
           <View className="flex-row justify-between items-center w-full">
-          <FormControlHelper className="flex-1">
-            <FormControlHelperText className="">
-              Deve ter pelo menos 6 caracteres.
-            </FormControlHelperText>
-          </FormControlHelper>
-          
-          <Text className="text-white text-sm mt-1 underline" onPress={() => {}}>
-            Esqueci a senha
-          </Text>
-        </View>
+            <FormControlHelper className="flex-1">
+              <FormControlHelperText className="">
+                Deve ter pelo menos 6 caracteres.
+              </FormControlHelperText>
+            </FormControlHelper>
+
+            <Text className="text-white text-sm mt-1 underline" onPress={() => { }}>
+              Esqueci a senha
+            </Text>
+          </View>
 
           <FormControlError>
             <FormControlErrorIcon as={AlertCircleIcon} />
@@ -117,26 +107,24 @@ const LoginScreen = () => {
           </FormControlError>
 
         </FormControl>
-<<<<<<< HEAD
         <Button className="w-fit self-end mt-4" size="sm" onPress={() => { singIn() }}>
           <ButtonText>Submit</ButtonText>
         </Button>
-=======
 
         <View classname="py-5">
-          <Button className="w-full bg-[#ED5359] mt-6 h-14 self-center " onPress={() => {singIn()}}>
+          <Button className="w-full bg-[#ED5359] mt-6 h-14 self-center " onPress={() => { singIn() }}>
             <ButtonText className="text-[25px]">Entrar</ButtonText>
           </Button>
 
         </View>
 
->>>>>>> 956724a189b778a5ef532ea973161b37ea4e4a3b
+
       </VStack>
 
     </Card>
-    </View>
-  </SafeAreaView>;
-};
+  </SafeAreaView>
+}
+
 export default LoginScreen;
 
-{/*Filipenses 4:13 - "Posso todas as coisas naquele que me fortalece" */}
+{/*Filipenses 4:13 - "Posso todas as coisas naquele que me fortalece" */ }
