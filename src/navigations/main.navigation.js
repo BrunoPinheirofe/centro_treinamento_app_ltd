@@ -6,19 +6,17 @@ import AdminNavigator from "./admin.navigation";
 import AlunoNavigator from "./aluno.navigation";
 import InstrutorNavigator from "./instrutor.navigatio";
 import { View, Text } from "react-native";
-import { useAuth } from "../contexts/AuthContext";
+import { useAuth } from "../hooks/useAuth";
 
 const MainNavigation = () => {
     const {signed, user, loadin} = useAuth()
-    const roles = ["aluno", "admin", "instrutor"]
-    const [role, setRole] = useState(roles[0]);
 
     const renderNavigator = () => {
         if (!signed) {
             return <AuthNavigator />;
         }
 
-        switch (role) {
+        switch (user.role) {
             case "admin":
                 return <AdminNavigator />;
             case "aluno":
